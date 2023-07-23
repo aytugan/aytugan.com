@@ -8,5 +8,6 @@ theme:
 nav:
   - Home: index.md
   - E-mail: email.md
+  - Nginx: nginx.md
   - Proxmox: proxmox.md
   - Wireguard: wireguard.md
