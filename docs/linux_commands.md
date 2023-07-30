@@ -50,3 +50,42 @@ rsync --rsync-path="sudo rsync" --recursive --compress --delete --verbose --prog
 
 There is nothing should be run on the target server
 
+## Files
+
+### Create tar archive using numeric ID of owner and groups
+
+Useful to backup container's data folders
+
+```bash
+tar --numeric-owner --no-acls --no-selinux --no-xattrs --same-owner \
+-cvzf file.tgz folder
+```
+
+## Security
+
+### Secure free space wipe
+
+```bash
+apt -y install secure-delete
+sfill -fllv /
+```
+
+### LUKS disk encryption
+
+https://www.howtoforge.com/tutorial/how-to-encrypt-a-linux-partition-with-dm-crypt-luks/
+
+```bash
+# Create disk:
+cryptsetup --verbose --cipher aes-xts-plain64 --key-size 512 --hash sha512 --iter-time 5000 --use-random luksFormat /dev/sda3
+
+# Open disk (create device /dev/mapper/data2):
+cryptsetup open --type luks /dev/sda1 data2
+```
+
+## SSH
+
+### SSH port forward
+
+```bash
+ssh -L 192.168.0.10:8080:10.0.0.10:80 root@10.0.0.10
+```
