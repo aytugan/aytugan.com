@@ -89,3 +89,7 @@ cryptsetup open --type luks /dev/sda1 data2
 ```bash
 ssh -L 192.168.0.10:8080:10.0.0.10:80 root@10.0.0.10
 ```
+
+### Using TPM for ssh private key storage
+
+<https://github.com/Foxboron/ssh-tpm-agent>
