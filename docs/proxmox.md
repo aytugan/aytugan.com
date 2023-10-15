@@ -70,3 +70,9 @@ Limit ZFS cache permanently - create file `/etc/modprobe.d/zfs`
 options zfs zfs_arc_max=8589934592
 options zfs zfs_arc_min=1073741824
 ```
+
+### Assing full privileges to Admin group
+
+```
+pveum aclmod / -group Admin -role Administrator
+```
