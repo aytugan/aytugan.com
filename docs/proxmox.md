@@ -45,6 +45,16 @@ iface vmbr1 inet static
 
 ```
 
+Example of IP alias
+
+```
+auto vmbr0
+iface vmbr0 inet static
+        ...
+        up ip addr add 1.2.3.4/24 dev vmbr0 label vmbr0:1
+        down ip addr del 1.2.3.4/24 dev vmbr0 label vmbr0:1
+```
+
 **Tips:**
 
 - Proxmox node IP address must use IP of internal bridge interface
