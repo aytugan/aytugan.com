@@ -72,7 +72,11 @@ ZFS cache does not counts in Linux cache and can get memory from other apps.
 
 Show ZFS cache statistics `arcstat` , very detailed stat: `arc_summary`
 
-Limit ZFS cache to 8Gb on the fly - `echo 8589934592 >> /sys/module/zfs/parameters/zfs_arc_max`
+Limit ZFS cache to 8Gb on the fly
+
+```
+echo 8589934592 >> /sys/module/zfs/parameters/zfs_arc_max
+```
 
 Limit ZFS cache permanently - create file `/etc/modprobe.d/zfs`
 
