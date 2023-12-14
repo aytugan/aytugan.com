@@ -40,8 +40,8 @@ iface vmbr1 inet static
         bridge-fd 0
 
         post-up echo 1 > /proc/sys/net/ipv4/ip_forward
-        post-up -A POSTROUTING -s 172.16.122.0/24 -o vmbr0 -j MASQUERADE
-        post-down -A POSTROUTING -s 172.16.122.0/24 -o vmbr0 -j MASQUERADE
+        post-up   -A POSTROUTING -s 172.16.122.0/24 -o vmbr0 -j MASQUERADE
+        post-down -D POSTROUTING -s 172.16.122.0/24 -o vmbr0 -j MASQUERADE
 
 ```
 
